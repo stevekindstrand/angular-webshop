@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: calc(100% - 96.8px);
+
+    .productHeading {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+
+    .productDiv {
+        margin-bottom: 20px;
+    }
+    
+    table {
+        border-collapse: collapse;
+        width: 700px;
+
+    }
+    table, th, td {
+        border: 1px solid #e2e2e2;
+        text-align: center;
+    }
+}

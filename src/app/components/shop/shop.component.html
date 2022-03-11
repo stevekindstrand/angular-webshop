@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="productDiv" *ngFor="let p of products">
+        
+        <img [src]="p.imageUrl" alt="Image" />
+
+        <div class="productInfo">
+            <h3>{{ p.name }}</h3>
+            <p>{{ p.price }}kr</p>
+        </div>
+
+        <button (click)="addToCart(p)">Lägg till i kundvagnen</button>
+    </div>
+</div>

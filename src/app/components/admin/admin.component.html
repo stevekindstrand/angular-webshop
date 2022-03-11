@@ -1,0 +1,21 @@
+<div class="container">
+    <h2 class="productHeading">Dina ordrar:</h2>
+    <div class="productDiv" *ngFor="let o of orders">
+
+            <table>
+                <tr>
+                    <th>Ordernummer</th>
+                    <th>Order skapad</th>
+                    <th>Namn</th>
+                    <th>Betalning</th>
+                </tr>
+                <tr>
+                    <td>{{o.id}}</td>
+                    <td>{{o.created}}</td>
+                    <td>{{o.createdBy}}</td>
+                    <td>{{o.paymentMethod}}</td>
+                </tr>
+            </table>
+
+    </div>
+</div>

@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: calc(100% - 96.8px);
+    .welcome {
+        font-size: 2rem;
+        margin: 0;
+    }
+    .logo {
+        font-size: 2rem;
+        font-weight: 600;
+        margin: 0;
+        padding-left: 9px;
+        color: #000000;
+        .shop {
+            color: #006eff;
+        }
+    }
+}

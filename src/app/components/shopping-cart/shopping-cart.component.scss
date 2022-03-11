@@ -1,0 +1,101 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+
+    .productHeading {
+        font-size: 2rem;
+        margin-top: 100px;
+    }
+
+    .productContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+
+        img {
+            width: 169px; //338, 169, 84.5
+            height: 250px; //500, 250, 125
+        }
+
+        .productDiv {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            border-radius: 12px;
+            margin: 10px;
+            padding: 50px;
+            width: 300px;
+            height: 200px;
+            background: #e2e2e2;
+
+            .productInfo {
+                margin-left: 20px;
+            }
+        }
+
+        .removeBtn {
+            border: none;
+            border-radius: 12px;
+            padding: 10px;
+            width: 150px;
+            background: #006eff;
+            color: white; 
+        }
+
+        .removeBtn:hover {
+            background: #0055c5;
+        } 
+    }
+
+    form {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        border-radius: 10px;
+        gap: 10px;
+        margin: 50px 0 50px 0;
+        padding: 20px;
+        width: 550px;
+        background: #e2e2e2;
+
+        legend {
+            font-size: 1.5rem;
+            margin: 10px 0 15px 0;
+        }
+
+        input {
+            border: 0;
+            border-bottom: 2px solid #eeeeee;
+            border-radius: 10px;
+            padding: 10px;
+            width: 90%;
+        }
+
+        .reqP {
+            margin: 0;
+        }
+
+        .payBtn {
+            border: none;
+            border-radius: 12px;
+            margin: 15px 0 10px 0;
+            padding: 10px;
+            width: 150px;
+            background: #006eff;
+            color: white;
+
+            &:hover {
+                background: #0055c5;
+            }
+
+            &:disabled{
+                background-color: #a0c9ff;
+            }
+        }
+    }
+}

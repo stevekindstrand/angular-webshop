@@ -1,0 +1,59 @@
+<div class="container">
+    <h2 class="productHeading">Varukorg</h2>
+    <div class="productContainer">
+        <div class="productDiv" *ngFor="let p of products; let i = index">
+            <img [src]="p.imageUrl" alt="Image" />
+            <div class="productInfo">
+                <h3>{{ p.name }}</h3>
+                <p>{{ p.price }}kr</p>
+                <button class="removeBtn" (click)="removeProduct(i)"><mat-icon>remove_shopping_cart</mat-icon></button>
+            </div>
+        </div>
+    </div>
+
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <legend>Slutför ditt köp</legend> 
+
+        <input type="text" placeholder="Förnamn" formControlName="firstname" />
+        <div *ngIf="userForm.get('firstname')?.invalid && (userForm.get('firstname')?.touched || userForm.get('firstname')?.dirty)">
+            <p class="reqP" *ngIf="userForm.get('firstname')?.errors?.['required']">Detta fält är obligatoriskt!</p>
+        </div>
+
+        <input type="text" placeholder="Efternamn" formControlName="lastname" />
+        <div *ngIf="userForm.get('lastname')?.invalid && (userForm.get('lastname')?.touched || userForm.get('lastname')?.dirty)">
+            <p class="reqP" *ngIf="userForm.get('lastname')?.errors?.['required']">Detta fält är obligatoriskt!</p>
+        </div>
+
+        <input type="text" placeholder="Adress" formControlName="address" />
+        <div *ngIf="userForm.get('address')?.invalid && (userForm.get('address')?.touched || userForm.get('address')?.dirty)">
+            <p class="reqP" *ngIf="userForm.get('address')?.errors?.['required']">Detta fält är obligatoriskt!</p>
+        </div>
+
+        <input type="text" placeholder="Ort" formControlName="city" />
+        <div *ngIf="userForm.get('city')?.invalid && (userForm.get('city')?.touched || userForm.get('city')?.dirty)">
+            <p class="reqP" *ngIf="userForm.get('city')?.errors?.['required']">Detta fält är obligatoriskt!</p>
+        </div>
+
+        <input type="number" placeholder="Postnummer" formControlName="zipCode" />
+        <div *ngIf="userForm.get('zipCode')?.invalid && (userForm.get('zipCode')?.touched || userForm.get('zipCode')?.dirty)">
+            <p class="reqP" *ngIf="userForm.get('zipCode')?.errors?.['required']">Detta fält är obligatoriskt!</p>
+        </div>
+
+        <input type="number" placeholder="Mobilnummer" formControlName="cellphone" />
+        <div *ngIf="userForm.get('cellphone')?.invalid && (userForm.get('cellphone')?.touched || userForm.get('cellphone')?.dirty)">
+            <p class="reqP" *ngIf="userForm.get('cellphone')?.errors?.['required']">Detta fält är obligatoriskt!</p>
+        </div>
+
+        <input type="text" placeholder="Mejladress" formControlName="email" />
+        <div *ngIf="userForm.get('email')?.invalid && (userForm.get('email')?.touched || userForm.get('email')?.dirty)">
+            <p class="reqP" *ngIf="userForm.get('email')?.errors?.['required']">Detta fält är obligatoriskt!</p>
+        </div>
+
+        <input type="text" placeholder="Hur vill du betala? (Paypal, Swish" formControlName="paymentMethod" />
+        <div *ngIf="userForm.get('paymentMethod')?.invalid && (userForm.get('paymentMethod')?.touched || userForm.get('paymentMethod')?.dirty)">
+            <p class="reqP" *ngIf="userForm.get('paymentMethod')?.errors?.['required']">Detta fält är obligatoriskt!</p>
+        </div>
+
+        <button class="payBtn" type="submit" [disabled]="!userForm.valid || products.length <1">Betala Köp</button>
+    </form>
+</div>
